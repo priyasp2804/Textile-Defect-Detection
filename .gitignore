@@ -1,0 +1,7 @@
+# Ignore Python and Node artifacts globally
+*.pyc
+__pycache__/
+node_modules/
+dist/
+.env
+.DS_Store
