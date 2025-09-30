@@ -3,8 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import Profile from "../pages/Profile";
-import History from "../pages/History";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
@@ -34,22 +32,6 @@ export default function AppRoutes() {
         element={
           <ProtectedRoute>
             <Home />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/profile"
-        element={
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/history"
-        element={
-          <ProtectedRoute>
-            <History />
           </ProtectedRoute>
         }
       />
