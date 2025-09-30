@@ -1,5 +1,13 @@
+# Python
 __pycache__/
 *.pyc
-.env
-*.log
-.DS_Store
+*.pyo
+*.pyd
+*.env
+
+# Upload temp folders
+tmp_uploads/
+
+# IDEs
+.vscode/
+.idea/
