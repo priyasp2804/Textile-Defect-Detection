@@ -10,9 +10,8 @@ app = FastAPI(title="Textile Quality Checker Backend")
 
 # Update origins to include your Vercel frontend
 origins = [
-    "http://localhost:5173",  # for local development
-    "http://127.0.0.1:5173",  # for local development
-    "https://your-frontend.vercel.app",  # Replace with your actual Vercel URL
+    "http://localhost:5173",  # for local frontend testing
+    "http://127.0.0.1:5173"
 ]
 
 app.add_middleware(
