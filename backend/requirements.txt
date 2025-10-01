@@ -18,10 +18,11 @@ opencv-python-headless==4.8.0.76  # Headless version for server
 # Utilities
 numpy==1.26.0
 pandas==2.1.0
-python-multipart==0.0.6
+python-multipart==0.0.8
 pillow==10.1.0
 matplotlib==3.8.1
 seaborn==0.12.2
+
 
 # Roboflow (if using dataset API)
 roboflow==1.0.2
