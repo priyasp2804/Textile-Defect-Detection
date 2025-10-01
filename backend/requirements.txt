@@ -1,15 +1,30 @@
+# Web and API
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
-motor==3.6.0
 python-dotenv==1.0.1
+
+# Database & Auth
+motor==3.6.0
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
+
+# Data Validation
 pydantic[email]==2.9.2
+
+# Cloud / Storage
 cloudinary==1.41.0
+
+# PDF & Reports
 reportlab>=3.6.0
-tensorflow==2.23.0
+
+# ML / AI
+tensorflow==2.23.0             # Compatible with Python 3.13 & NumPy 2.x
 scikit-learn==1.6.3
-roboflow==1.1.24
-requests==2.32.3
-numpy==2.3.3
+numpy==2.3.3                   # Required by TF + Roboflow + OpenCV
 opencv-python-headless==4.9.0.72
+
+# Roboflow
+roboflow==1.1.24
+
+# Other
+requests==2.32.3
