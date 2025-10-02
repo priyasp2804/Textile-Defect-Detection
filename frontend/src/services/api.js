@@ -1,11 +1,11 @@
-// src/services/api.js
 import axios from "axios";
 
+// Directly set your API URL here
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000", 
+  baseURL: "https://textile-defect-detection.onrender.com/", // Replace with your actual Render backend URL
 });
 
-// Attach token to every request if it exists
+// Attach token to every request if exists
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {

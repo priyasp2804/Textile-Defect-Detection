@@ -1,4 +1,3 @@
-# main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from db import db
@@ -6,16 +5,15 @@ from routes import auth, report, inspection
 
 app = FastAPI(title="Textile Quality Checker Backend")
 
-# Allow both local dev and Vercel frontend
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://your-frontend.vercel.app"
+    "https://your-frontend.vercel.app",         # Replace with your actual Vercel URL
+    "https://<your-render-app>.onrender.com"    # (Optional) If frontend ever needs to talk directly to backend
 ]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,       # ✅ exact matches only
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
