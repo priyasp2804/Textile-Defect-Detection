@@ -1,4 +1,3 @@
-# utils/auth_utils.py
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
 from passlib.context import CryptContext
@@ -18,11 +17,17 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "180"
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
+MAX_BCRYPT_PASSWORD_LENGTH = 72  # bcrypt limit
+
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    # Truncate password to max allowed length to avoid bcrypt error
+    trimmed_password = password[:MAX_BCRYPT_PASSWORD_LENGTH]
+    return pwd_context.hash(trimmed_password)
 
 def verify_password(password: str, hashed: str) -> bool:
-    return pwd_context.verify(password, hashed)
+    # Truncate password for verification as well
+    trimmed_password = password[:MAX_BCRYPT_PASSWORD_LENGTH]
+    return pwd_context.verify(trimmed_password, hashed)
 
 def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode = data.copy()
