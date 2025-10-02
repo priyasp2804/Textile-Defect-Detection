@@ -8,7 +8,7 @@ app = FastAPI(title="Textile Quality Checker Backend")
 origins = [
     "http://localhost:5173",             # Local frontend
     "http://127.0.0.1:5173",             # Local frontend fallback
-    "https://your-frontend.vercel.app"   # Vercel deployed frontend
+    "https://textile-defect-detection.vercel.app"   # Vercel deployed frontend
 ]
 
 app.add_middleware(
